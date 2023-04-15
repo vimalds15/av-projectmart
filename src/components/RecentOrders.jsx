@@ -1,5 +1,4 @@
 import React, { useMemo } from 'react'
-import MaterialReactTable from "material-react-table"
 import { activeOrdersColumns, activeOrdersData } from '../mock/mockData'
 
 const ActiveOrder = () => {
@@ -8,8 +7,8 @@ const ActiveOrder = () => {
   return (
     <div className='mt-10 border border-neutral-300 rounded-lg p-6'>
         <div className='flex justify-between'>
-        <h2 className='font-semibold'>Active Orders</h2>
-        <h2 className='text-primary font-semibold'>View all orders</h2>
+        <h2 className='font-semibold'>Recent Orders</h2>
+        <h2 className='text-primary font-semibold cursor-pointer'>View all orders</h2>
         </div>
         <div>
 
