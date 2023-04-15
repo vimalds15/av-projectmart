@@ -5,9 +5,11 @@ import InvoicesPage from "./orders/OrdersPage";
 import CryptoWalletPage from "./crytowallet/CryptoWalletPage";
 import ProjectsPage from "./projects/ProjectsPage";
 import OrdersPage from "./orders/OrdersPage";
+import DetailPage from "./detail/DetailPage";
 
 export {
   LandingPage,
+  DetailPage,
   HomePage,
   OrdersPage,
   ProjectsPage,
