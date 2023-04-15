@@ -3,5 +3,15 @@ import HomePage from "./home/HomePage";
 import DashboardPage from "./dashboard/DashboardPage";
 import InvoicesPage from "./orders/OrdersPage";
 import CryptoWalletPage from "./crytowallet/CryptoWalletPage";
+import ProjectsPage from "./projects/ProjectsPage";
+import OrdersPage from "./orders/OrdersPage";
 
-export {LandingPage,HomePage,DashboardPage,InvoicesPage,CryptoWalletPage}
+export {
+  LandingPage,
+  HomePage,
+  OrdersPage,
+  ProjectsPage,
+  DashboardPage,
+  InvoicesPage,
+  CryptoWalletPage,
+};
