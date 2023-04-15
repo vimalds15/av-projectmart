@@ -3,7 +3,7 @@ import UserLogo from "../assets/user.png";
 
 const MainNavBar = () => {
   return (
-    <div className="flex justify-center h-16 px-10 py-6 border border-b-neutral-200  ">
+    <div className="flex justify-center h-16 px-10 py-6 bg-white shadow-md border border-b-neutral-200  ">
         <div className="flex  items-center justify-between  w-full 2xl:max-w-6xl">
         <div className="flex items-center">
           <div className="mr-5">

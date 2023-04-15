@@ -14,25 +14,21 @@ const HomePage = () => {
 
   return (
     <div className="flex flex-col h-screen">
-
       {/* Navbar */}
-
-      <MainNavBar />
-
+      <div className="fixed top-0 left-0 w-full z-10">
+        <MainNavBar />
+      </div>
 
       <div className="flex flex-grow ">
         {/* Sidebar */}
-        <Sidebar activeItem={activeItem} handleItemClick={handleItemClick} />
+          <Sidebar activeItem={activeItem} handleItemClick={handleItemClick} />
 
         {/* main section */}
-        <div className=" w-full flex-1">
-  {activeItem === 'Dashboard' && <DashboardPage />}
-  {activeItem === 'Orders' && <Orders />}
-  {activeItem === 'Crypto Wallet' && <CryptoWalletPage />}
-  {/* {activeItem === 'Notification' && <Notification />} */}
-  
-</div>
-
+        <div className="flex-1 ml-[20%] mt-10 p-10 overflow-y-auto">
+          {activeItem === "Dashboard" && <DashboardPage />}
+          {activeItem === "Orders" && <Orders />}
+          {activeItem === "Crypto Wallet" && <CryptoWalletPage />}
+        </div>
       </div>
     </div>
   );

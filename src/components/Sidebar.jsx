@@ -1,9 +1,9 @@
 import React from 'react'
-import { MdOutlineLibraryBooks, MdOutlineDashboard, MdOutlineListAlt, MdOutlineWallet, MdOutlineNotificationsNone } from 'react-icons/md';
+import { MdOutlineLibraryBooks, MdOutlineDashboard, MdOutlineListAlt, MdOutlineWallet } from 'react-icons/md';
 
 const Sidebar = ({handleItemClick,activeItem}) => {
   return (
-    <div className="hidden md:flex flex-col justify-around w-[20%] h-[100%-64px] border border-r-neutral-200">
+    <div className="hidden md:flex flex-col justify-around w-[20%] mt-16 border bg-white border-r-neutral-200 fixed top-0 left-0 h-full z-10">
           <div className="px-6 flex flex-col gap-4">
             
             <div
@@ -35,7 +35,6 @@ const Sidebar = ({handleItemClick,activeItem}) => {
               <p>Crypto Wallet</p>
             </div>
           </div>
-          <div className="px-6">Take Note</div>
         </div>
   )
 }
