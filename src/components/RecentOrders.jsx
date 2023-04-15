@@ -15,7 +15,7 @@ const ActiveOrder = () => {
 <table className="table-auto w-full mt-8 ">
         <thead>
           <tr>
-            {activeOrdersColumns.map((column, index) => (
+            {columns.map((column, index) => (
               <th
                 key={`header-${index}`}
                 className="py-2 px-4 text-left font-medium text-gray-500"
@@ -31,7 +31,7 @@ const ActiveOrder = () => {
               {activeOrdersColumns.map((column, columnIndex) => (
                 <td
                   key={`cell-${columnIndex}`}
-                  className="border-b-2 border-gray-200 font-semibold py-4 px-4"
+                  className="border-b-2 border-gray-200 font-semibold py-4 px-2 md:px-4"
                 >
                   {column.accessorKey === 'buyer' && (
                     <img
