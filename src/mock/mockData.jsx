@@ -1,4 +1,4 @@
-export const activeOrdersData = [
+export const recentOrdersData = [
     {
         buyer:"https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cmFuZG9tJTIwcGVvcGxlfGVufDB8fDB8fA%3D%3D&w=1000&q=80",
         project:"Website design for an ecommerce platform",
@@ -27,7 +27,29 @@ export const activeOrdersData = [
     }  
 ]
 
-export const activeOrdersColumns = [
+export const recentProjectsData = [
+    {
+        thumbnail:"",
+        project:"Complete 2023 React Js Crash Course",
+        date:"Jan 21, 2021",
+        price:"$1000"
+    },
+    {
+        thumbnail:"",
+        project:"React Expense Tracker using Hooks & Context API",
+        date:"Apr 30, 2021",
+        price:"$800"
+    },
+    
+    {
+        thumbnail:"https://i.ytimg.com/vi/0fYi8SGA20k/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLDWce0k5XmT0oYgy1xdoRsioH_u5A",
+        project:"3D Website with Three.js",
+        date:"Jun 10, 2021",
+        price:"$1200"
+    },
+]
+
+export const recentOrdersColumns = [
     {
         header:"Buyer",
         accessorKey:"buyer",
@@ -46,5 +68,27 @@ export const activeOrdersColumns = [
     {
         header:"Total",
         accessorKey:"total",
+    },
+]
+
+export const recentProjectsColumns = [
+    {
+        header:"Thumbnail",
+        accessorKey:"thumbnail",
+        accessorFn: (rowData) => (
+            <img src={rowData.thumbnail} alt="Thumbnail" style={{ width: "100px", height: "50px",objectFit:"cover" }} ></img>
+          ),
+    },
+    {
+        header:"Project",
+        accessorKey:"project",
+    },
+    {
+        header:"Date",
+        accessorKey:"date",
+    },
+    {
+        header:"Price",
+        accessorKey:"price",
     },
 ]

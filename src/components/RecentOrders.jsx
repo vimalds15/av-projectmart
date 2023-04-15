@@ -1,8 +1,8 @@
 import React, { useMemo } from 'react'
-import { activeOrdersColumns, activeOrdersData } from '../mock/mockData'
+import { recentOrdersColumns, recentOrdersData } from '../mock/mockData'
 
 const ActiveOrder = () => {
-  const columns = useMemo(()=>activeOrdersColumns)
+  const columns = useMemo(()=>recentOrdersColumns)
 
   return (
     <div className='mt-10 border border-neutral-300 rounded-lg p-6'>
@@ -26,9 +26,9 @@ const ActiveOrder = () => {
           </tr>
         </thead>
         <tbody>
-          {activeOrdersData.map((row, rowIndex) => (
+          {recentOrdersData.map((row, rowIndex) => (
             <tr key={`row-${rowIndex}`} className=" border-b-gray-200">
-              {activeOrdersColumns.map((column, columnIndex) => (
+              {recentOrdersColumns.map((column, columnIndex) => (
                 <td
                   key={`cell-${columnIndex}`}
                   className="border-b-2 border-gray-200 font-semibold py-4 px-2 md:px-4"
