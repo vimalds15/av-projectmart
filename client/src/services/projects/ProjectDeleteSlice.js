@@ -7,8 +7,8 @@ const initialState = {
     loading:null,
 }
 
-const ProductDeleteSlice = createSlice({
-  name: "productDelete",
+const ProjectDeleteSlice = createSlice({
+  name: "projectDelete",
   initialState,
   reducers: {
     setError:(state,action)=>{
@@ -23,11 +23,11 @@ const ProductDeleteSlice = createSlice({
   }
 });
 
-export const {setError,setLoading,setSuccess} = ProductDeleteSlice.actions
+export const {setError,setLoading,setSuccess} = ProjectDeleteSlice.actions
 
-export default ProductDeleteSlice.reducer
+export default ProjectDeleteSlice.reducer
 
-export const deleteProduct = (id) => async(dispatch, getState) => {
+export const deleteProject = (id) => async(dispatch, getState) => {
     try {
         dispatch(setLoading(true))
         const {token} =getState().userLogin.userInfo
@@ -38,7 +38,7 @@ export const deleteProduct = (id) => async(dispatch, getState) => {
         }
   
   
-        await axios.delete(`/api/products/${id}`,config)
+        await axios.delete(`/api/projects/${id}`,config)
         dispatch(setSuccess(true))
         dispatch(setLoading(false))
       } catch (error) {

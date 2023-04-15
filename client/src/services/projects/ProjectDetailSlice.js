@@ -2,36 +2,37 @@ import { createSlice } from '@reduxjs/toolkit'
 import axios from 'axios';
 
 const initialState = {
-    products:[],
+    projectInfo:{},
     loading:null,
     error:null,
 }
 
-const ProductTopSlice = createSlice({
-  name: "productTop",
+const ProjectDetailSlice = createSlice({
+  name: "projectDetail",
   initialState,
   reducers: {
-    setProducts:(state,action)=>{
-        state.products=action.payload
-      },
       setLoading:(state,action) => {
         state.loading = action.payload
       },
       setError:(state,action) => {
         state.error= action.payload
+      },
+      setProject:(state,action)=>{
+        state.projectInfo = action.payload
       }
   }
 });
 
-export const {setProducts,setError,setLoading} = ProductTopSlice.actions
+export const {setError,setLoading,setProject} = ProjectDetailSlice.actions
 
-export default ProductTopSlice.reducer
+export default ProjectDetailSlice.reducer
 
-export const getTopProducts = () => async (dispatch) => {
+export const getProjectById = (id) => async(dispatch) => {
     try {
       dispatch(setLoading(true))
-      const {data} = await axios.get(`/api/products/top`)
-      dispatch(setProducts(data))
+      const {data} = await axios.get(`/api/projects/${id}`)
+      console.log(data)
+      dispatch(setProject(data))
       dispatch(setLoading(false))
     } catch (error) {
       dispatch(setLoading(false))

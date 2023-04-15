@@ -5,11 +5,11 @@ const initialState = {
     success:null,
     error:null,
     loading:null,
-    product:{},
+    project:{},
 }
 
-const ProductUpdateSlice = createSlice({
-  name: "productUpdate",
+const ProjectUpdateSlice = createSlice({
+  name: "projectUpdate",
   initialState,
   reducers: {
     setError:(state,action)=>{
@@ -21,20 +21,20 @@ const ProductUpdateSlice = createSlice({
     setLoading:(state,action)=>{
         state.loading=action.payload
     },
-    setProduct:(state,action)=> {
-        state.product = action.payload
+    setProject:(state,action)=> {
+        state.project = action.payload
     },
-    setProductUpdateReset:(state)=> {
-        state.product = {}
+    setProjectUpdateReset:(state)=> {
+        state.project = {}
     }
   }
 });
 
-export const {setError,setLoading,setSuccess,setProduct,setProductUpdateReset} = ProductUpdateSlice.actions
+export const {setError,setLoading,setSuccess,setProject,setProjectUpdateReset} = ProjectUpdateSlice.actions
 
-export default ProductUpdateSlice.reducer
+export default ProjectUpdateSlice.reducer
 
-export const updateProduct = (product) => async(dispatch, getState) => {
+export const updateProject = (project) => async(dispatch, getState) => {
     try {
         dispatch(setLoading(true))
         const {token} =getState().userLogin.userInfo
@@ -46,9 +46,9 @@ export const updateProduct = (product) => async(dispatch, getState) => {
         }
   
   
-        const {data}=await axios.put(`/api/products/${product._id}`,product,config)
+        const {data}=await axios.put(`/api/projects/${project._id}`,project,config)
         dispatch(setSuccess(true))
-        dispatch(setProduct(data))
+        dispatch(setProject(data))
         dispatch(setLoading(false))
       } catch (error) {
         const err = error.response && error.response.data.message?error.response.data.message:error.message

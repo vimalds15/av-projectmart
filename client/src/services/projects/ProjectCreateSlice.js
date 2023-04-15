@@ -2,13 +2,14 @@ import { createSlice } from '@reduxjs/toolkit'
 import axios from 'axios';
 
 const initialState = {
-    loading:null,
     success:null,
-    error:null
+    error:null,
+    loading:null,
+    project:{},
 }
 
-const ProductCreateReviewSlice = createSlice({
-  name: "productCreateReviewSlice",
+const ProjectCreateSlice = createSlice({
+  name: "projectCreate",
   initialState,
   reducers: {
     setError:(state,action)=>{
@@ -20,32 +21,36 @@ const ProductCreateReviewSlice = createSlice({
     setLoading:(state,action)=>{
         state.loading=action.payload
     },
-    setProductReviewReset:(state)=>{
-        state.success=null
+    setProject:(state,action)=> {
+        state.project = action.payload
+    },
+    setProjectCreateReset:(state)=> {
+        state.project={}
         state.loading=null
         state.error=null
+        state.success=null
     }
   }
 });
 
-export const {setError,setLoading,setSuccess,setProductReviewReset} = ProductCreateReviewSlice.actions
+export const {setError,setLoading,setSuccess,setProject,setProjectCreateReset} = ProjectCreateSlice.actions
 
-export default ProductCreateReviewSlice.reducer
+export default ProjectCreateSlice.reducer
 
-export const createProductReview = (productId,review) => async(dispatch, getState) => {
+export const createProject = () => async(dispatch, getState) => {
     try {
         dispatch(setLoading(true))
         const {token} =getState().userLogin.userInfo
         const config ={
             headers: {
-                "Content-Type":"application/json",
                 Authorization:`Bearer ${token}`
             }
         }
   
   
-        await axios.post(`/api/products/${productId}/reviews`,review,config)
+        const {data}=await axios.post(`/api/projects`,{},config)
         dispatch(setSuccess(true))
+        dispatch(setProject(data))
         dispatch(setLoading(false))
       } catch (error) {
         const err = error.response && error.response.data.message?error.response.data.message:error.message
