@@ -1,9 +1,20 @@
 import React from 'react'
+import OrderTable from '../../components/OrderTable'
 
-const Orders = () => {
+const OrdersPage = () => {
   return (
-    <div>Orders</div>
+    <>
+    <h2 className='font-bold text-lg mt-5'>Order History</h2>
+      <p className='text-sm text-gray-500'>History of all your orders</p>
+    
+        <div className='flex justify-between'>
+        
+        </div>
+        <div>
+          <OrderTable />
+        </div>
+    </>
   )
 }
 
-export default Orders
+export default OrdersPage
