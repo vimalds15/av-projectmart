@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import DashboardPage from "../dashboard/DashboardPage";
 import CryptoWalletPage from "../crytowallet/CryptoWalletPage";
 import Sidebar from "../../components/Sidebar";
-import Orders from "../orders/Orders";
+import Orders from "../orders/OrdersPage";
 import MainNavBar from "../../components/MainNavBar";
 
 const HomePage = () => {
