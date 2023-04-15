@@ -1,10 +1,4 @@
 import React from "react";
-import {
-  MdOutlineLibraryBooks,
-  MdOutlineDashboard,
-  MdOutlineListAlt,
-  MdOutlineWallet,
-} from "react-icons/md";
 import { Link } from "react-router-dom";
 import { sidebarConstant } from "../constants/sidebar";
 

@@ -8,7 +8,7 @@ import {
   
   export const sidebarConstant = [
     {
-      path:"/home",
+      path:"/",
       name:"Home",
       icon: MdOutlineHome
     },
