@@ -14,9 +14,7 @@ const ProjectSlice = createSlice({
   initialState,
   reducers: {
     setAllProjects:(state,action)=>{
-      state.allProjects=action.payload.projects
-      state.pages=action.payload.pages
-      state.page=action.payload.page
+      state.allProjects=action.payload
     },
     setLoading:(state,action) => {
       state.loading = action.payload
