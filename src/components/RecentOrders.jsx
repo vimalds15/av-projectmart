@@ -1,8 +1,9 @@
-import React, { useMemo } from 'react'
-import { recentOrdersColumns, recentOrdersData } from '../mock/mockData'
+import React from 'react'
+import OrderTable from './OrderTable'
 
-const ActiveOrder = () => {
-  const columns = useMemo(()=>recentOrdersColumns)
+
+const RecentOrders = () => {
+
 
   return (
     <div className='mt-10 border border-neutral-300 rounded-lg p-6'>
@@ -11,46 +12,10 @@ const ActiveOrder = () => {
         <h2 className='text-primary font-semibold cursor-pointer'>View all orders</h2>
         </div>
         <div>
-
-<table className="table-auto w-full mt-8 ">
-        <thead>
-          <tr>
-            {columns.map((column, index) => (
-              <th
-                key={`header-${index}`}
-                className="py-2 px-4 text-left font-medium text-gray-500"
-              >
-                {column.header}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {recentOrdersData.map((row, rowIndex) => (
-            <tr key={`row-${rowIndex}`} className=" border-b-gray-200">
-              {recentOrdersColumns.map((column, columnIndex) => (
-                <td
-                  key={`cell-${columnIndex}`}
-                  className="border-b-2 border-gray-200 font-semibold py-4 px-2 md:px-4"
-                >
-                  {column.accessorKey === 'buyer' && (
-                    <img
-                      src={row[column.accessorKey]}
-                      alt="Buyer"
-                      className="w-10 h-10 rounded-full object-cover"
-                    />
-                  )}
-                  {column.accessorKey !== 'buyer' && row[column.accessorKey]}
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-
+          <OrderTable />
         </div>
     </div>
   )
 }
 
-export default ActiveOrder
+export default RecentOrders
