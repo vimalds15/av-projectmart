@@ -5,13 +5,18 @@ import {
   InvoicesPage,
   CryptoWalletPage,
   ProjectsPage,
-  OrdersPage
+  OrdersPage,
+  DetailPage
 } from "../pages";
 
 export const routes = [
   {
     path: "/",
     element: <HomePage />,
+  },
+  {
+    path: "/detail/:id",
+    element: <DetailPage />,
   },
   {
     path: "/dashboard",
