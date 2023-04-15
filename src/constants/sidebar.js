@@ -1,22 +1,36 @@
-export const sidebarConstant = [
+import {
+    MdOutlineLibraryBooks,
+    MdOutlineDashboard,
+    MdOutlineListAlt,
+    MdOutlineWallet,
+    MdOutlineHome
+  } from "react-icons/md";
+  
+  export const sidebarConstant = [
     {
-        path:"/dashboard",
-        name:"Dashboard"
+      path:"/home",
+      name:"Home",
+      icon: MdOutlineHome
     },
     {
-        path:"/orders",
-        name:"Orders"
+      path:"/dashboard",
+      name:"Dashboard",
+      icon: MdOutlineDashboard
     },
     {
-        path:"/home",
-        name:"Home"
+      path:"/orders",
+      name:"Orders",
+      icon: MdOutlineListAlt
     },
     {
-        path:"/projects",
-        name:"Projects"
+      path:"/projects",
+      name:"Projects",
+      icon: MdOutlineLibraryBooks
     },
     {
-        path:"/cryptowallet",
-        name:"Crypto Wallet"
+      path:"/cryptowallet",
+      name:"Crypto Wallet",
+      icon: MdOutlineWallet
     },
-]
+  ];
+  
