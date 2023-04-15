@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import { MdOutlineHome, MdOutlineDashboard, MdOutlineListAlt, MdOutlineWallet, MdOutlineNotificationsNone } from 'react-icons/md';
 import UserLogo from "../../assets/user.png";
-import { Route, Routes } from "react-router-dom";
-import { routes } from "../../routes/routes";
 import DashboardPage from "../dashboard/DashboardPage";
-import InvoicesPage from "../invoices/InvoicesPage";
 import CryptoWalletPage from "../crytowallet/CryptoWalletPage";
+import Sidebar from "../../components/Sidebar";
+import Orders from "../orders/Orders";
 
 const HomePage = () => {
   const [activeItem, setActiveItem] = useState("Dashboard");
@@ -37,45 +35,12 @@ const HomePage = () => {
 
       <div className="flex flex-grow ">
         {/* Sidebar */}
-        <div className="hidden md:flex flex-col justify-around w-[20%] h-[100%-64px] border border-r-neutral-200">
-          <div className="px-6 flex flex-col gap-4">
-            
-            <div
-              className={`flex items-center gap-2 py-4 px-2 rounded-lg pl-4 cursor-pointer hover:bg-gray-100 ${activeItem === "Dashboard" && "bg-gray-100" }`}
-              onClick={() => handleItemClick("Dashboard")}
-            >
-              <MdOutlineDashboard size={20} />
-              <p>Dashboard</p>
-            </div>
-            <div
-              className={`flex items-center gap-2 py-4 px-2 rounded-lg pl-4 cursor-pointer hover:bg-gray-100 ${activeItem === "Invoices" && "bg-gray-100" }`}
-              onClick={() => handleItemClick("Invoices")}
-            >
-              <MdOutlineListAlt size={20} />
-              <p>Invoices</p>
-            </div>
-            <div
-              className={`flex items-center gap-2 py-4 px-2 rounded-lg pl-4 cursor-pointer hover:bg-gray-100 ${activeItem === "Crypto Wallet" && "bg-gray-100" }`}
-              onClick={() => handleItemClick("Crypto Wallet")}
-            >
-              <MdOutlineWallet size={20} />
-              <p>Crypto Wallet</p>
-            </div>
-            <div
-              className={`flex items-center gap-2 py-4 px-2 rounded-lg pl-4 cursor-pointer hover:bg-gray-100 ${activeItem === "Notification" && "bg-gray-100" }`}
-              onClick={() => handleItemClick("Notification")}
-            >
-              <MdOutlineNotificationsNone size={20} />
-              <p>Notification</p>
-            </div>
-          </div>
-          <div className="px-6">Take Note</div>
-        </div>
+        <Sidebar activeItem={activeItem} handleItemClick={handleItemClick} />
 
         {/* main section */}
         <div className=" w-full flex-1">
   {activeItem === 'Dashboard' && <DashboardPage />}
-  {activeItem === 'Invoices' && <InvoicesPage />}
+  {activeItem === 'Orders' && <Orders />}
   {activeItem === 'Crypto Wallet' && <CryptoWalletPage />}
   {/* {activeItem === 'Notification' && <Notification />} */}
   
