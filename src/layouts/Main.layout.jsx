@@ -3,7 +3,7 @@ import MainNavBar from "../components/MainNavBar";
 import Sidebar from "../components/Sidebar";
 
 const MainLayout = ({}) => {
-  const [activeItem, setActiveItem] = useState("Dashboard");
+  const [activeItem, setActiveItem] = useState("Home");
   const handleItemClick = (item) => {
     setActiveItem(item);
   };
