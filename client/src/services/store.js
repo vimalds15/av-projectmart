@@ -6,13 +6,13 @@ import OrderDetailSlice from "./order/OrderDetailSlice"
 import OrderListAdminSlice from "./order/OrderListAdminSlice"
 import OrderListSlice from "./order/OrderListSlice"
 import OrderPaySlice from "./order/OrderPaySlice"
-import ProductCreateReviewSlice from "./products/ProductCreateReviewSlice"
-import ProductCreateSlice from "./products/ProductCreateSlice"
-import ProductDeleteSlice from "./products/ProductDeleteSlice"
-import ProductDetailSlice from "./products/ProductDetailSlice"
-import ProductSlice from "./products/ProductSlice"
-import ProductTopSlice from "./products/ProductTopSlice"
-import ProductUpdateSlice from "./products/ProductUpdateSlice"
+import ProjectCreateReviewSlice from "./projects/ProjectCreateReviewSlice"
+import ProjectCreateSlice from "./projects/ProjectCreateSlice"
+import ProjectDeleteSlice from "./projects/ProjectDeleteSlice"
+import ProjectDetailSlice from "./projects/ProjectDetailSlice"
+import ProjectSlice from "./projects/ProjectSlice"
+import ProjectTopSlice from "./projects/ProjectTopSlice"
+import ProjectUpdateSlice from "./projects/ProductUpdateSlice"
 import UserDeleteSlice from "./user/UserDeleteSlice"
 import UserDetailSlice from "./user/UserDetailSlice"
 import UserListSlice from "./user/UserListSlice"
@@ -23,13 +23,13 @@ import UserUpdateSlice from "./user/UserUpdateSlice"
 
 export const store = configureStore({
     reducer:{
-        "product":ProductSlice,
-        "productDetail":ProductDetailSlice,
-        "productDelete":ProductDeleteSlice,
-        "productCreate":ProductCreateSlice,
-        "productUpdate":ProductUpdateSlice,
-        "productTop":ProductTopSlice,
-        "productCreateReview":ProductCreateReviewSlice,
+        "project":ProjectSlice,
+        "projectDetail":ProjectDetailSlice,
+        "projectDelete":ProjectDeleteSlice,
+        "projectCreate":ProjectCreateSlice,
+        "projectUpdate":ProjectUpdateSlice,
+        "projectTop":ProjectTopSlice,
+        "projectCreateReview":ProjectCreateReviewSlice,
         "cart":CartSlice,
         "userLogin":UserLoginSlice,
         "userRegister":UserRegisterSlice,
