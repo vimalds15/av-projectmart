@@ -1,5 +1,6 @@
 import React from 'react'
 import RecentOrders from '../../components/RecentOrders'
+import RecentProjects from '../../components/RecentProjects'
 
 const DashboardPage = () => {
   return (
@@ -8,6 +9,7 @@ const DashboardPage = () => {
       <p className='text-sm text-gray-500'>Welcome to your dashboard</p>
       <div>
         <RecentOrders />
+        <RecentProjects />
       </div>
     </div>
   )
