@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { getProjectById } from "../../services/projects/ProjectDetailSlice";
 import { MdBolt } from "react-icons/md";
 
@@ -53,12 +53,14 @@ const DetailPage = () => {
           </p>
         </div>
         <div>
+        <Link to={"https://coingate.com/"} target="_blank">
           <button
-            onClick={() => navigate("/detail/1")}
+            // onClick={() => navigate("/detail/1")}
             className="bg-blue-200 px-3 py-2 rounded-md font-semibold"
           >
             Buy Project
           </button>
+          </Link>
         </div>
       </div>
       </div>
