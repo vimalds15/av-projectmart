@@ -12,17 +12,17 @@ const ProjectCard = ({title,image,category,techStack,price}) => {
       <img
         src={image}
         alt="project"
-        className="w-[250px] rounded-md"
+        className="w-[250px] h-[150px] rounded-md object-cover"
       />
       <p className="truncate font-medium mt-2">
         {title}
       </p>
-      <p className="text-sm">
+      <p className="text-sm truncate">
         Category: <span className="font-semibold">{category}</span>
       </p>
       <div className="flex mt-2 gap-2">
-        {techStackArray.map((idx,tag) => (
-          <p key={idx} className="text-sm bg-blue-100 px-2 rounded-md">{tag}</p>
+        {techStackArray.map((tag,idx) => (
+          <p key={idx} className="text-sm truncate bg-blue-100 px-2 rounded-md">{tag}</p>
         ))}
       </div>
       <div className="flex items-center justify-between mt-4">
