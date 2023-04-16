@@ -7,7 +7,7 @@ import { store } from "./services/store";
 import {Provider} from "react-redux"
 import axios from "axios"
 
-axios.defaults.baseURL="http://localhost:5000/"
+axios.defaults.baseURL="https://av-projectmart.vercel.app/"
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
