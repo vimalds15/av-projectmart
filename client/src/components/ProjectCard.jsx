@@ -1,8 +1,7 @@
 import React from "react";
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
-const ProjectCard = ({title,image,category,techStack,price}) => {
-  const tags = ["React", "Three.js", "3D"];
+const ProjectCard = ({title,image,category,techStack,price,id}) => {
   const navigate = useNavigate()
   const techStackArray = techStack.split(",")
 
@@ -32,7 +31,7 @@ const ProjectCard = ({title,image,category,techStack,price}) => {
           </p>
         </div>
         <div>
-          <button onClick={()=>navigate('/detail/1')} className="bg-blue-200 text-sm px-3 py-2 rounded-md font-semibold">View More</button>
+          <button onClick={()=>navigate(`/detail/${id}`)} className="bg-blue-200 text-sm px-3 py-2 rounded-md font-semibold">View More</button>
         </div>
       </div>
     </div>

@@ -21,7 +21,7 @@ const HomePage = () => {
 
       <div className='flex flex-wrap items-center justify-evenly gap-6 mt-6 '>
         {allProjects?.map(project =>
-            <ProjectCard key={project._id} title={project.title} image={project.image} techStack={project.techStack} category={project.category} price={project.price} />
+            <ProjectCard key={project._id} id={project._id} title={project.title} image={project.image} techStack={project.techStack} category={project.category} price={project.price} />
           )}
       </div>
     </div>
