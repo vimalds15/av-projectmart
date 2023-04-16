@@ -16,7 +16,7 @@ const HomePage = () => {
 
   return (
     <div>
-       <h2 className='text-gray-400 font-semibold text-lg'>Welcome, <span className='font-bold text-black'>Vimal!</span></h2>
+       <h2 className='font-semibold text-lg'>Welcome to ProjectMart!</h2>
       <p className='text-sm text-gray-500'>Browse the projects</p>
 
       <div className='flex flex-wrap items-center justify-evenly gap-6 mt-6 '>

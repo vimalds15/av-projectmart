@@ -7,8 +7,8 @@ const initialState = {
     error:null,
 }
 
-const ProjectTopSlice = createSlice({
-  name: "projectTop",
+const ProjectUserSlice = createSlice({
+  name: "projectUser",
   initialState,
   reducers: {
     setProjects:(state,action)=>{
@@ -23,14 +23,14 @@ const ProjectTopSlice = createSlice({
   }
 });
 
-export const {setProjects,setError,setLoading} = ProjectTopSlice.actions
+export const {setProjects,setError,setLoading} = ProjectUserSlice.actions
 
-export default ProjectTopSlice.reducer
+export default ProjectUserSlice.reducer
 
-export const getTopProjects = () => async (dispatch) => {
+export const getProjectByUser = (id) => async (dispatch) => {
     try {
       dispatch(setLoading(true))
-      const {data} = await axios.get(`/api/projects/top`)
+      const {data} = await axios.get(`/api/projects/user/${id}`)
       dispatch(setProjects(data))
       dispatch(setLoading(false))
     } catch (error) {

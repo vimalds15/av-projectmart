@@ -5,12 +5,14 @@ import {
   createProject,
   createProjectReview,
   updateProject,
-  deleteProject
+  deleteProject,
+  getProjectByUser
 } from "../controllers/projectController.js";
 import { admin, protect } from "../middleware/authMiddleware.js";
 const router = express.Router();
 
 router.route("/").get(getProjects).post(protect, admin, createProject);
+router.route("/user/:id").get(getProjectByUser)
 router.route("/:id/reviews").post(protect, admin, createProjectReview);
 router
   .route("/:id")

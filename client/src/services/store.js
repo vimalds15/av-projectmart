@@ -11,7 +11,7 @@ import ProjectCreateSlice from "./projects/ProjectCreateSlice"
 import ProjectDeleteSlice from "./projects/ProjectDeleteSlice"
 import ProjectDetailSlice from "./projects/ProjectDetailSlice"
 import ProjectSlice from "./projects/ProjectSlice"
-import ProjectTopSlice from "./projects/ProjectTopSlice"
+import ProjectUserSlice from "./projects/ProjectUserSlice"
 import ProjectUpdateSlice from "./projects/ProjectUpdateSlice"
 import UserDeleteSlice from "./user/UserDeleteSlice"
 import UserDetailSlice from "./user/UserDetailSlice"
@@ -28,7 +28,7 @@ export const store = configureStore({
         "projectDelete":ProjectDeleteSlice,
         "projectCreate":ProjectCreateSlice,
         "projectUpdate":ProjectUpdateSlice,
-        "projectTop":ProjectTopSlice,
+        "projectUser":ProjectUserSlice,
         "projectCreateReview":ProjectCreateReviewSlice,
         "cart":CartSlice,
         "userLogin":UserLoginSlice,

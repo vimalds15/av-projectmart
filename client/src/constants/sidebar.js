@@ -27,10 +27,10 @@ import {
       name:"Projects",
       icon: MdOutlineLibraryBooks
     },
-    {
-      path:"/cryptowallet",
-      name:"Crypto Wallet",
-      icon: MdOutlineWallet
-    },
+    // {
+    //   path:"/cryptowallet",
+    //   name:"Crypto Wallet",
+    //   icon: MdOutlineWallet
+    // },
   ];
   

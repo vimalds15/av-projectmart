@@ -41,7 +41,7 @@ const DetailPage = () => {
       </p>
       <div className="flex  items-center mt-4 gap-2">
         <p>Tech Stack:</p>
-        {projectInfo.techStack.split(',').map((tag) => (
+        {projectInfo?.techStack?.split(',')?.map((tag) => (
           <p className=" bg-blue-100 px-2 rounded-md">{tag}</p>
         ))}
       </div>
@@ -72,7 +72,7 @@ const DetailPage = () => {
       <div>
         <h3 className=" font-semibold mb-2">Features:</h3>
         <ul>
-          {projectInfo.features.map((feature,idx)=>
+          {projectInfo?.features?.map((feature,idx)=>
           <div className="flex items-center gap-2 mb-1">
             <MdBolt />
             <li>{feature}</li>

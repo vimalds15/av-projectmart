@@ -25,6 +25,21 @@ const getProjectById = asyncHandler(async (req, res) => {
   }
 })
 
+//@desc fetch single products
+//@route GET /api/products/:id
+//@access public
+
+const getProjectByUser = asyncHandler(async (req, res) => {
+  const project = await Project.find({user:req.params.id})
+
+  if (project) {
+    res.json(project)
+  } else {
+    res.status(404)
+    throw new Error('Project not found')
+  }
+})
+
 // @desc Delete a product
 // @route DELETE /api/products/:id
 // @access Private/Admin
@@ -118,6 +133,7 @@ const createProjectReview = asyncHandler(async (req, res) => {
 export {
   getProjectById,
   getProjects,
+  getProjectByUser,
   createProject,
   createProjectReview,
   updateProject,

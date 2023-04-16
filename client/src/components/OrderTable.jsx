@@ -26,14 +26,14 @@ const OrderTable = () => {
                 key={`cell-${columnIndex}`}
                 className="border-b-2 border-gray-200 font-semibold py-4 px-2 md:px-4"
               >
-                {column.accessorKey === "buyer" && (
+                {column.accessorKey === "imageURL" && (
                   <img
                     src={row[column.accessorKey]}
-                    alt="Buyer"
-                    className="w-10 h-10 rounded-full object-cover"
+                    alt="imageURL"
+                    className="w-20 h-10 object-cover"
                   />
                 )}
-                {column.accessorKey !== "buyer" && row[column.accessorKey]}
+                {column.accessorKey !== "imageURL" && row[column.accessorKey]}
               </td>
             ))}
           </tr>
